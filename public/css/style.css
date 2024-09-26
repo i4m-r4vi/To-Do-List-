@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #e1e3ea;
+}
+
+.sub_main{
+    background-color: #de3f53;
+    border-radius: 10px;
+    text-align: center;
+    width: 30%;
+}
+
+.title>h1{
+    padding: 10px;
+    color: white;
+    font-weight: 400;
+}
+
+.main_input{
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+}
+
+.main_input>input{
+    padding: 6px 0px;
+    padding-left: 8px;
+    background-color: #3c4979;
+    outline: none;
+    border: none;
+    color: white;
+}
+
+.main_input>input::placeholder{
+    color: #8c8598;
+}
+.main_input>button{
+    background-color: #1dd2af;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: white;
+}
+.todo_items{
+    background-color: #262e4c;
+    color: white;
+    text-align: left;
+    width: 100%;
+    position: relative;
+}
+
+.todo_items>div{
+    padding: 10px;
+    display: flex;
+    justify-content:space-between;
+}
+.listData{
+    color: white;
+}
+.imp_icon a{
+    background-color: transparent;
+    margin-right: 2px;
+    padding: 2px 10px;
+    text-decoration: none;
+    color: #dedfe0;
+    border-radius: 3px;
+}

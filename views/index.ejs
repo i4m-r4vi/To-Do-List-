@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= Title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="main">
+        <div class="sub_main">
+            <div class="title">
+                <h1>
+                    <%= Title%>
+                </h1>
+                <div class="todo_input">
+                    <% if(edit_id){%>
+                        <form action="/updateData/<%=edit_id %>" method="post" class="main_input">
+                            <input type="text" name="listData" value="<%= editList.name %> ">
+                            <button><i class="fa fa-pen" aria-hidden="true"></i></button>
+                        </form>
+                        <%} else {%>
+                            <form action="/sendData" method="post" class="main_input">
+                                <input type="text" name="listData" placeholder="Enter The Data">
+                                <button><i class="fa fa-plus" aria-hidden="true"></i></button>
+                            </form>
+                        <%}%>
+
+                </div>
+            </div>
+
+
+            <div class="todo_items">
+                    <% arrayData.forEach((listData)=>{%>
+                        <div>
+                            <div class="listData">
+                                <p><%= listData.name %></p>
+                            </div>
+    
+                            <div class="imp_icon">
+                                <a href="/?edit_id=<%= listData._id%>" class="edit"><i class="fa fa-pen" aria-hidden="true"></i></a>
+                                <a href="/?delete_id=<%= listData._id%>" class="Delete"><i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <hr>
+                    <%})%> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>
